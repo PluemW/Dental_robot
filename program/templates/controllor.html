@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Robot Controllor Interface</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+  <script src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+</head>
+
+<menu>
+  <header class="header-logo">
+      <div class="logo">
+        <img src="{{ url_for('serve_image', filename='main_logo.png')}}" alt="Logo" class="logo-img">
+        <span class="logo-text">YourBrand</span>
+      </div>
+      <div class="nav-container">
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/controllor" class="active">Controller</a></li>
+            <li><a href="/config">Config</a></li>
+            <li><a href="/history">History</a></li>
+            <li><a href="/teams">Teams</a></li>
+          </ul>
+        </nav>
+        <button id="connect-button" class="connected">Connected</button>
+      </div>    
+  </header>    
+</menu>
+
+<body class="conbody">
+  <div class="center-container">
+    <div class="image-container">
+      <div>
+        <button class="image-button" style="bottom:150px; left:100px;" onclick="sendMove(1, 0, 0, 0)">
+          <img src="{{ url_for('serve_image', filename='move_up.png') }}" alt="Button Icon">
+        </button>
+        <button class="image-button" style="bottom:90px; left:40px;" onclick="sendMove(0, 1, 0, 0)">
+          <img src="{{ url_for('serve_image', filename='move_left.png') }}" alt="Button Icon">
+        </button>
+        <button class="image-button" style="bottom:90px; left:160px;" onclick="sendMove(0, 0, 1, 0)">
+          <img src="{{ url_for('serve_image', filename='move_right.png') }}" alt="Button Icon">
+        </button>
+        <button class="image-button" style="bottom:30px; left:100px;" onclick="sendMove(0, 0, 0, 1)">
+          <img src="{{ url_for('serve_image', filename='move_down.png') }}" alt="Button Icon">
+        </button>
+        <button class="image-button" style="bottom:90px; left:100px;" onclick="sendMove(0, 0, 0, 0)">
+          <img src="{{ url_for('serve_image', filename='stop.png') }}" alt="Button Icon">
+        </button>
+      </div>
+
+      <img id="control" src="{{ url_for('video_cap') }}" alt="Video Capture">
+        
+      <div class="sliders">
+        <div>
+          <label for="x-axis">X-axis</label>
+          <input type="range" id="x-axis" name="x-axis" min="0" max="100">
+        </div>
+        <div>
+          <label for="z-axis">Z-axis</label>
+          <input type="range" id="z-axis" name="z-axis" min="0" max="100">
+        </div>
+        <div>
+          <label for="rotate">Rotate</label>
+          <input type="range" id="rotate" name="rotate" min="0" max="100">
+        </div>
+        <div>
+          <label for="pick">Pick</label>
+          <input type="range" id="pick" name="pick" min="0" max="100">
+        </div>
+      </div>
+        
+    </div>
+  </div>
+</body>
+
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+</html>
