@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Robot Controller Interface</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+  <script src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+</head>
+
+<menu>
+  <header class="header-logo">
+      <div class="logo">
+        <img src="{{ url_for('serve_image', filename='main_logo.png')}}" alt="Logo" class="logo-img">
+        <span class="logo-text">YourBrand</span>
+      </div>
+      <div class="nav-container">
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/controllor">Controller</a></li>
+            <li><a href="/config">Config</a></li>
+            <li><a href="/history">History</a></li>
+            <li><a href="/teams" class="active">Teams</a></li>
+          </ul>
+        </nav>
+        <button id="connect-button" class="connected">Connected</button>
+      </div>    
+  </header>    
+</menu>
+
+<hteam>
+  <h1>
+    <span class="body">Our Team</span>
+  </h1>
+</hteam>
+
+<body>
+  <div class="team-logo">
+    <div class="team-item">
+      <img src="{{ url_for('serve_image', filename='win.jpg')}}" alt="team-logo" class="team-img">
+      <p class="team-text">ณวัฒน์ วัชรอำไพวัณย์ (วิน)</p>
+      <p class="team-text">650610836</p>
+      <p class="team-text">Mechanics</p>
+    </div>
+    <div class="team-item">
+      <img src="{{ url_for('serve_image', filename='pond.jpg')}}" alt="team-logo" class="team-img">
+      <p class="team-text">ธนัช ธนัญชัย (ปอนด์)</p>
+      <p class="team-text">650610838</p>
+      <p class="team-text">Mechanics</p>
+    </div>
+    <div class="team-item">
+      <img src="{{ url_for('serve_image', filename='pw.jpg')}}" alt="team-logo" class="team-img">
+      <p class="team-text">วิทวัส เจริญวชิรศักดิ์ (ปลื้ม)</p>
+      <p class="team-text">650610856</p>
+      <p class="team-text">Programming</p>
+    </div>
+    <div class="team-item">
+      <img src="{{ url_for('serve_image', filename='tong.jpg')}}" alt="team-logo" class="team-img">
+      <p class="team-text">อชิตศักดิ์ แพงเพ็ง (เปตอง)</p>
+      <p class="team-text">650610863</p>
+      <p class="team-text">Mechanics</p>
+    </div>
+  </div>
+</body>
+
+<script src="{{ url_for('static', filename='script.js')}}"></script>
+</html>
